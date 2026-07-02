@@ -5,10 +5,6 @@ export const HeaderBlocks: HeaderBlockType = {
         title: 'Обо мне',
         link: '#about-me'
     },
-    skills: {
-        title: 'Навыки',
-        link: '#skills'
-    },
     experience: {
         title: 'Опыт работы',
         link: '#experience'
@@ -16,6 +12,14 @@ export const HeaderBlocks: HeaderBlockType = {
     education: {
         title: 'Образование',
         link: '#education'
+    },
+    skills: {
+        title: 'Навыки',
+        link: '#skills'
+    },
+    additional: {
+        title: 'Дополнительно',
+        link: '#additional'
     },
     contacts: {
         title: 'Контакты',

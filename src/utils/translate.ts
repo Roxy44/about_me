@@ -9,7 +9,9 @@ const EN: Record<string, string> = {
   'Навыки': 'Skills',
   'Опыт работы': 'Experience',
   'Образование': 'Education',
+  'Дополнительно': 'Additional Information',
   'Контакты' : 'Contacts',
+  'Дмитрий Иванков': 'Dmitriy Ivankov',
 }
 
 export function translate(text: string, locale: Locale): string {

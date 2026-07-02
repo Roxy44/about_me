@@ -1,1 +1,10 @@
 @import 'tailwindcss';
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height, 40px);
+}
+
+section[id] {
+  scroll-margin-top: var(--header-height, 40px);
+}

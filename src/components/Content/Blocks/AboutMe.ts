@@ -22,7 +22,7 @@ export const aboutMeContent = (locale: string = 'ru'): ContentBlock[] => [
         type: 'sub-group',
         title: 'Обо мне',
         direction: 'column',
-				className: 'text-base',
+				className: 'text-base gap-4',
         content: [
           {
             type: 'paragraph',

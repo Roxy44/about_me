@@ -1,8 +1,14 @@
 export type ContentBlock = {
-  type: 'paragraph' | 'heading' | 'list' | 'project' | 'link' | 'image' | 'sub-group',
+  type: 'paragraph' | 'heading' | 'list' | 'project' | 'link' | 'image' | 'sub-group' | 'toggle' | 'divider',
   text?: string,
-  items?: string[],
+  items?: string[] | {
+    icon?: string,
+    value: string,
+    text: string,
+    measureValue?: number,
+  }[],
   title?: string,
+  name?: string,
   href?: string,
   description?: string,
   image?: string,
@@ -18,6 +24,14 @@ export type ContentBlock = {
     main: string,
     sub?: string,
   },
+  dotList?: boolean,
+  options?: {
+    label: string,
+    value: string,
+  }[],
+  measure?: string,
+  columns?: number,
+  isShort?: boolean,
 }
 
 export type ContentSection = {

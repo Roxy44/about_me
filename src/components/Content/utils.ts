@@ -1,6 +1,9 @@
 import type { ContentSection } from './types'
 import { aboutMeContent } from './Blocks/AboutMe'
 import { additionalContent } from './Blocks/Additional'
+import { experienceContent } from './Blocks/Experience'
+import { educationContent } from './Blocks/Education'
+import { skillsContent } from './Blocks/Skills'
 
 
 function getSimpleText(locale: string, ru: string, en: string): string {
@@ -14,17 +17,17 @@ export const ContentBlocks = (locale: string): Record<string, ContentSection> =>
   },
   experience: {
     title: 'Опыт работы',
-    content: getSimpleText(locale, 'Опыт работы', 'Experience'),
+    content: experienceContent(locale),
     link: 'experience',
   },
   education: {
     title: 'Образование',
-    content: getSimpleText(locale, 'Образование', 'Education'),
+    content: educationContent(locale),
     link: 'education',
   },
   skills: {
     title: 'Навыки',
-    content: getSimpleText(locale, 'Навыки', 'Skills'),
+    content: skillsContent(locale),
     link: 'skills',
   },
   additional: {

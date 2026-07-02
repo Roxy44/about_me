@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from 'react'
 import { useLocale } from '../../utils'
-import type { ContentBlock } from './types'
+import type { ContactListItem, ContentBlock } from './types'
 import { CircleCheck } from 'lucide-react'
 
 const linkClassName =
@@ -13,8 +13,14 @@ type ContentRendererProps = {
 type SkillItem = {
   icon?: string
   value: string
-  text: string
+  text?: string
   measureValue?: number
+}
+
+function isContactItem(
+  item: string | SkillItem | ContactListItem,
+): item is ContactListItem {
+  return typeof item === 'object' && 'type' in item
 }
 
 function isSkillItem(item: string | SkillItem): item is SkillItem {
@@ -194,7 +200,7 @@ function renderBlock(block: ContentBlock, index: number, t: (text: string) => st
         </p>
       )
 
-    case 'image': {
+    case 'image':
       if (block.variant === 'circle') {
         const size = block.size ?? 400
 
@@ -230,7 +236,9 @@ function renderBlock(block: ContentBlock, index: number, t: (text: string) => st
           className={block.className ?? 'max-w-md rounded-lg border border-gray-200'}
         />
       )
-    }
+
+    case 'contacts':
+      return <ContactsBlock key={index} block={block} t={t} />
 
     case 'sub-group':
       return (
@@ -267,6 +275,80 @@ function renderBlock(block: ContentBlock, index: number, t: (text: string) => st
     default:
       return null
   }
+}
+
+function ContactsBlock({
+  block,
+  t,
+}: {
+  block: ContentBlock
+  t: (text: string) => string
+}) {
+  const [copiedValue, setCopiedValue] = useState<string | null>(null)
+
+  const handleCopy = async (value: string) => {
+    try {
+      await navigator.clipboard.writeText(value)
+      setCopiedValue(value)
+      window.setTimeout(() => {
+        setCopiedValue((current) => (current === value ? null : current))
+      }, 2000)
+    } catch {
+      setCopiedValue(null)
+    }
+  }
+
+  return (
+    <div className="relative mt-4 w-fit">
+      <div className="flex gap-2 rounded-lg bg-gray-100">
+        {(block.items ?? []).map((item, itemIndex) => {
+          if (typeof item === 'string' || !isContactItem(item)) return null
+
+          if (item.type === 'link') {
+            return (
+              <a
+                key={itemIndex}
+                href={item.value}
+                target="_blank"
+                rel="noreferrer"
+                title={item.text}
+                className="rounded-md p-1 transition-colors hover:bg-white"
+              >
+                <img
+                  src={item.icon}
+                  alt={item.text ?? ''}
+                  className="size-8"
+                />
+              </a>
+            )
+          }
+
+          return (
+            <button
+              key={itemIndex}
+              type="button"
+              title={item.text}
+              onClick={() => handleCopy(item.value)}
+              className={`cursor-pointer rounded-md p-1 transition-colors hover:bg-white`}
+            >
+              <img
+                src={item.icon}
+                alt={item.text ?? ''}
+                className="size-8"
+              />
+            </button>
+          )
+        })}
+      </div>
+      <div
+        role="status"
+        aria-live="polite"
+        className={`mb-2 text-sm font-medium text-green-700 transition-opacity ${copiedValue ? 'block' : 'hidden  '}`}
+      >
+        {t('Скопировано!')}
+      </div>
+    </div>
+  )
 }
 
 function ExpandList({ list, t, filterValue }: { list: ContentBlock[], t: (text: string) => string, filterValue?: string }) {

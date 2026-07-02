@@ -1,12 +1,21 @@
+export type SkillListItem = {
+  icon?: string
+  value: string
+  text?: string
+  measureValue?: number
+}
+
+export type ContactListItem = {
+  icon?: string
+  value: string
+  text?: string
+  type: 'link' | 'copy'
+}
+
 export type ContentBlock = {
-  type: 'paragraph' | 'heading' | 'list' | 'project' | 'link' | 'image' | 'sub-group' | 'toggle' | 'divider',
+  type: 'paragraph' | 'heading' | 'list' | 'project' | 'link' | 'image' | 'sub-group' | 'toggle' | 'contacts' | 'divider',
   text?: string,
-  items?: string[] | {
-    icon?: string,
-    value: string,
-    text: string,
-    measureValue?: number,
-  }[],
+  items?: string[] | SkillListItem[] | ContactListItem[],
   title?: string,
   name?: string,
   href?: string,

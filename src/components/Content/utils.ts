@@ -4,11 +4,7 @@ import { additionalContent } from './Blocks/Additional'
 import { experienceContent } from './Blocks/Experience'
 import { educationContent } from './Blocks/Education'
 import { skillsContent } from './Blocks/Skills'
-
-
-function getSimpleText(locale: string, ru: string, en: string): string {
-  return locale === 'ru' ? ru : en
-}
+import { contactsContent } from './Blocks/Contacts'
 
 export const ContentBlocks = (locale: string): Record<string, ContentSection> => ({
 	personal_info: {
@@ -37,7 +33,7 @@ export const ContentBlocks = (locale: string): Record<string, ContentSection> =>
   },
   contacts: {
     title: 'Контакты',
-    content: getSimpleText(locale, 'Контакты', 'Contacts'),
+    content: contactsContent(),
     link: 'contacts',
   },
 })

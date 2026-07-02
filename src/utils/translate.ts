@@ -14,6 +14,7 @@ const EN: Record<string, string> = {
   'Дмитрий Иванков': 'Dmitriy Ivankov',
   'Развернуть': 'Expand',
   'Свернуть': 'Collapse',
+  'Скопировано!': 'Copied!',
 }
 
 export function translate(text: string, locale: Locale): string {

@@ -244,7 +244,7 @@ function renderBlock(block: ContentBlock, index: number, t: (text: string) => st
       return (
         <div key={index}>
           {block.title && (
-            <div className="mb-1 w-fit rounded-xl border-2 border-black-500 bg-black px-[12px] py-[4px] text-2xl font-bold text-white">
+            <div className="mb-1 w-fit rounded-xl border-2 border-black-500 bg-blue-400 px-[12px] py-[4px] text-2xl font-bold text-white">
               {t(block.title)}
             </div>
           )}

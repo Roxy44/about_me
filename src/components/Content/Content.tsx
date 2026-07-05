@@ -13,7 +13,7 @@ const Content = () => {
       className="text-black text-xl"
     >
       {item.title && 
-        <div data-section-anchor className="w-fit text-2xl font-bold px-[12px] py-[4px] border-2 border-black-500 rounded-xl bg-black text-white mb-1">
+        <div data-section-anchor className="w-fit text-2xl font-bold px-[12px] py-[4px] border-2 border-black-500 rounded-xl bg-blue-400 text-white mb-1">
           {t(item.title)}
         </div>
       }

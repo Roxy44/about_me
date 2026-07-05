@@ -25,12 +25,12 @@ export const experienceContent = (locale: string = 'ru'): ContentBlock[] => [
 						className: 'italic',
 					},
 					{
-            type: 'paragraph',
-            text: locale === 'ru' ? 
-                'Основные обязанности:'
-                :
-                'Main responsibilities:'
-          },
+						type: 'paragraph',
+						text: locale === 'ru' ? 
+							'Основные обязанности:'
+							:
+							'Main responsibilities:'
+					},
 					{
 						type: 'list',
 						dotList: true,
@@ -54,41 +54,7 @@ export const experienceContent = (locale: string = 'ru'): ContentBlock[] => [
 						type: 'heading',
 						text: 'Milk & Cartoons',
 						caption: {
-							main: locale === 'ru' ? 'Декабрь 2024 — Март 2025 (4 месяца)' : 'December 2024 — March 2025 (4 months)',
-						}
-					},
-					{
-						type: 'paragraph',
-						text: 'FullStack Developer',
-						className: 'italic',
-					},
-					{
-            type: 'paragraph',
-            text: locale === 'ru' ? 
-                'Основные обязанности:'
-                :
-                'Main responsibilities:'
-          },
-					{
-						type: 'list',
-						dotList: true,
-						items: [
-							locale === 'ru' ? 'разработка нового функционала для существующего приложения (создание переиспользуемых форм)' : 'development of new functionality for an existing application (creation of reusable forms)',
-							locale === 'ru' ? 'работа с серверной частью, написание GraphQL-запросов и создание эндпоинтов' : 'work with the server side, writing GraphQL queries and creating endpoints',
-						],
-					},
-				]
-			},
-			{
-				type: 'sub-group',
-				direction: 'column',
-				className: 'flex items-start gap-unset mb-6',
-				content: [
-					{
-						type: 'heading',
-						text: locale === 'ru' ? 'Фин Промоут Системс' : 'Fin Promote Systems',
-						caption: {
-							main: locale === 'ru' ? 'Май 2024 — Ноябрь 2024 (7 месяцев)' : 'May 2024 — November 2024 (7 months)',
+							main: locale === 'ru' ? 'Май 2024 — Март 2025 (11 месяцев)' : 'May 2024 — March 2025 (11 months)',
 						}
 					},
 					{
@@ -97,17 +63,19 @@ export const experienceContent = (locale: string = 'ru'): ContentBlock[] => [
 						className: 'italic',
 					},
 					{
-            type: 'paragraph',
-            text: locale === 'ru' ? 
-                'Основные обязанности:'
-                :
-                'Main responsibilities:'
-          },
+						type: 'paragraph',
+						text: locale === 'ru' ? 
+							'Основные обязанности:'
+							:
+							'Main responsibilities:'
+					},
 					{
 						type: 'list',
 						dotList: true,
 						items: [
+							locale === 'ru' ? 'разработка нового функционала для существующего приложения (создание переиспользуемых форм)' : 'development of new functionality for an existing application (creation of reusable forms)',
 							locale === 'ru' ? 'разработка лендингов по макетам Figma (изменение/добавление функционала, создание новых страниц)' : 'development of landing pages by Figma templates (changing/adding functionality, creating new page forms)',
+							locale === 'ru' ? 'работа с серверной частью, написание GraphQL-запросов и создание эндпоинтов' : 'work with the server side, writing GraphQL queries and creating endpoints',
 							locale === 'ru' ? 'написание и доработка своей библиотеки' : 'writing and improving my own library',
 						],
 					},
@@ -131,12 +99,12 @@ export const experienceContent = (locale: string = 'ru'): ContentBlock[] => [
 						className: 'italic',
 					},
 					{
-            type: 'paragraph',
-            text: locale === 'ru' ? 
-                'Основные обязанности:'
-                :
-                'Main responsibilities:'
-          },
+						type: 'paragraph',
+						text: locale === 'ru' ? 
+							'Основные обязанности:'
+							:
+							'Main responsibilities:'
+					},
 					{
 						type: 'list',
 						dotList: true,
@@ -166,12 +134,12 @@ export const experienceContent = (locale: string = 'ru'): ContentBlock[] => [
 						className: 'italic',
 					},
 					{
-            type: 'paragraph',
-            text: locale === 'ru' ? 
-                'Проектная работа. Оптимизация работы и улучшение производительности банковских приложений, добавление нового функционала. Разработка программного обеспечения для анализа кредитных организаций.'
-                :
-                'Project work. Optimization of the work and improvement of the performance of banking applications, adding new functionality. Development of software for the analysis of credit organizations.'
-          },
+						type: 'paragraph',
+						text: locale === 'ru' ? 
+							'Проектная работа. Оптимизация работы и улучшение производительности банковских приложений, добавление нового функционала. Разработка программного обеспечения для анализа кредитных организаций.'
+							:
+							'Project work. Optimization of the work and improvement of the performance of banking applications, adding new functionality. Development of software for the analysis of credit organizations.'
+					},
 				]
 			}
 		]

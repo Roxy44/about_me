@@ -46,7 +46,6 @@ export const aboutMeContent = (locale: string = 'ru'): ContentBlock[] => [
 					{
 						type: 'list',
 						items: [
-							locale === 'ru' ? 'хорошие коммуникативные навыки' : 'good communication skills',
 							locale === 'ru' ? 'создание качественных и понятных UI/UX пользовательских интерфейсов' : 'creation of high-quality and understandable UI/UX user interfaces',
 							locale === 'ru' ? 'сбор и управление обратной связью от проектной команды и пользователей с целью внесения необходимых доработок, улучшений' : 'collection and management of feedback from the project team and users in order to promptly make the necessary improvements',
 							locale === 'ru' ? 'полный цикл управления frontend разработкой в единственном лице — умение работать по целям, а не только реализовывать пул конкретных задач' : 'a full cycle of frontend development management in a single person — the ability to work on goals, and not just implement a pool of specific tasks',

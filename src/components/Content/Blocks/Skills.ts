@@ -1,4 +1,7 @@
 import type { ContentBlock } from '../types';
+import { publicAsset } from '../../../utils';
+
+const icon = (filename: string) => publicAsset(`icons/${filename}`);
 
 export const skillsContent = (locale: string = 'ru'): ContentBlock[] => [
   {
@@ -24,121 +27,121 @@ export const skillsContent = (locale: string = 'ru'): ContentBlock[] => [
         columns: 3,
         items: [
           {
-            icon: '/icons/JavaScript.png',
+            icon: icon('JavaScript.png'),
             value: 'frontend',
             text: 'JavaScript',
             measureValue: 4,
           },
           {
-            icon: '/icons/TypeScript.png',
+            icon: icon('TypeScript.png'),
             value: 'frontend',
             text: 'TypeScript',
             measureValue: 2,
           },
           {
-            icon: '/icons/React.webp',
+            icon: icon('React.webp'),
             value: 'frontend',
             text: 'React',
             measureValue: 4,
           },
           {
-            icon: '/icons/AntDesign.png',
+            icon: icon('AntDesign.png'),
             value: 'frontend',
             text: 'Ant Design',
             measureValue: 2,
           },
           {
-            icon: '/icons/shadcn.png',
+            icon: icon('shadcn.png'),
             value: 'frontend',
             text: 'shadcn',
             measureValue: 1,
           },
           {
-            icon: '/icons/HTML.png',
+            icon: icon('HTML.png'),
             value: 'frontend',
             text: 'HTML',
             measureValue: 4,
           },
           {
-            icon: '/icons/CSS.png',
+            icon: icon('CSS.png'),
             value: 'frontend',
             text: 'CSS',
             measureValue: 4,
           },
           {
-            icon: '/icons/Less.png',
+            icon: icon('Less.png'),
             value: 'frontend',
             text: 'Less',
             measureValue: 2,
           },
           {
-            icon: '/icons/Scss.png',
+            icon: icon('Scss.png'),
             value: 'frontend',
             text: 'Scss',
             measureValue: 2,
           },
           {
-            icon: '/icons/Tailwind.png',
+            icon: icon('Tailwind.png'),
             value: 'frontend',
             text: 'Tailwind CSS',
             measureValue: 1,
           },
           {
-            icon: '/icons/Redux.png',
+            icon: icon('Redux.png'),
             value: 'frontend',
             text: 'Redux',
             measureValue: 3,
           },
           {
-            icon: '/icons/NextJs.webp',
+            icon: icon('NextJs.webp'),
             value: 'frontend',
             text: 'Next.js',
             measureValue: 2,
           },
           {
-            icon: '/icons/Python.png',
+            icon: icon('Python.png'),
             value: 'backend',
             text: 'Python',
             measureValue: 1,
           },
           {
-            icon: '/icons/NodeJs.png',
+            icon: icon('NodeJs.png'),
             value: 'backend',
             text: 'Node.js',
             measureValue: 3,
           },
           {
-            icon: '/icons/Postman.svg',
+            icon: icon('Postman.svg'),
             value: 'backend',
             text: 'Postman',
             measureValue: 1,
           },
           {
-            icon: '/icons/Git.png',
+            icon: icon('Git.png'),
             value: 'general',
             text: 'Git',
             measureValue: 4,
           },
           {
-            icon: '/icons/Jira.png',
+            icon: icon('Jira.png'),
             value: 'general',
             text: 'Jira',
             measureValue: 1,
           },
           {
-            icon: '/icons/YouTrack.webp',
+            icon: icon('YouTrack.webp'),
             value: 'general',
             text: 'YouTrack',
             measureValue: 2,
           },
           {
-            icon: '/icons/Figma.webp',
+            icon: icon('Figma.webp'),
             value: 'general',
             text: 'Figma',
             measureValue: 3,
           },
           {
-            icon: '/icons/Confluence.webp',
+            icon: icon('Confluence.webp'),
             value: 'general',
             text: 'Confluence',
             measureValue: 1,

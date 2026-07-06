@@ -1,5 +1,5 @@
 import type { ContentBlock } from '../types';
-import { useIsMobile } from '../../../utils';
+import { publicAsset, useIsMobile } from '../../../utils';
 
 export const aboutMeContent = (locale: string = 'ru'): ContentBlock[] => {
   const isMobile = useIsMobile();
@@ -12,7 +12,7 @@ export const aboutMeContent = (locale: string = 'ru'): ContentBlock[] => {
       content: [
         {
           type: 'image',
-          src: '/img/photo.jpg',
+          src: publicAsset('img/photo.jpg'),
           alt: locale === 'ru' ? 'Фото профиля' : 'Profile photo',
           variant: 'circle',
           size: isMobile ? 200 : 300,

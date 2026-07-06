@@ -1,10 +1,10 @@
-import type { ContentSection } from './types'
-import { aboutMeContent } from './Blocks/AboutMe'
-import { additionalContent } from './Blocks/Additional'
-import { experienceContent } from './Blocks/Experience'
-import { educationContent } from './Blocks/Education'
-import { skillsContent } from './Blocks/Skills'
-import { contactsContent } from './Blocks/Contacts'
+import type { ContentSection } from './types';
+import { aboutMeContent } from './Blocks/AboutMe';
+import { additionalContent } from './Blocks/Additional';
+import { experienceContent } from './Blocks/Experience';
+import { educationContent } from './Blocks/Education';
+import { skillsContent } from './Blocks/Skills';
+import { contactsContent } from './Blocks/Contacts';
 
 export const ContentBlocks = (locale: string): Record<string, ContentSection> => ({
 	personal_info: {
@@ -36,4 +36,4 @@ export const ContentBlocks = (locale: string): Record<string, ContentSection> =>
     content: contactsContent(),
     link: 'contacts',
   },
-})
+});

@@ -1,4 +1,4 @@
-import type { ContentBlock } from '../types'
+import type { ContentBlock } from '../types';
 
 export const educationContent = (locale: string = 'ru'): ContentBlock[] => [
 	{
@@ -8,9 +8,9 @@ export const educationContent = (locale: string = 'ru'): ContentBlock[] => [
     content: [
       {
         type: 'heading',
-        text: locale === 'ru' ? 'Томский государственный университет систем управления и радиоэлектроники, Томск' : 'Tomsk State University of Control Systems and Radioelectronics',
+        text: locale === 'ru' ? 'Томский государственный университет систем управления и радиоэлектроники' : 'Tomsk State University of Control Systems and Radioelectronics',
         caption: {
-          main: locale === 'ru' ? '(Магистр 2021 – 2023)' : '(Master 2021 – 2023)',
+          main: locale === 'ru' ? 'Магистр 2021 – 2023' : 'Master 2021 – 2023',
         }
       },
 			{
@@ -22,9 +22,9 @@ export const educationContent = (locale: string = 'ru'): ContentBlock[] => [
 			},
 			{
         type: 'heading',
-        text: locale === 'ru' ? 'Томский государственный университет систем управления и радиоэлектроники, Томск' : 'Tomsk State University of Control Systems and Radioelectronics',
+        text: locale === 'ru' ? 'Томский государственный университет систем управления и радиоэлектроники' : 'Tomsk State University of Control Systems and Radioelectronics',
         caption: {
-          main: locale === 'ru' ? '(Бакалавр 2017 – 2021)' : '(Bachelor 2017 – 2021)',
+          main: locale === 'ru' ? 'Бакалавр 2017 – 2021' : 'Bachelor 2017 – 2021',
         }
       },
 			{
@@ -33,4 +33,4 @@ export const educationContent = (locale: string = 'ru'): ContentBlock[] => [
 			}
     ]
   }
-]
+];

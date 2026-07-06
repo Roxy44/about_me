@@ -1,4 +1,4 @@
-import type { ContentBlock } from '../types'
+import type { ContentBlock } from '../types';
 
 export const contactsContent = (): ContentBlock[] => [
     {

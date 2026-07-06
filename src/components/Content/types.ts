@@ -1,16 +1,16 @@
 export type SkillListItem = {
-  icon?: string
-  value: string
-  text?: string
-  measureValue?: number
-}
+  icon?: string;
+  value: string;
+  text?: string;
+  measureValue?: number;
+};
 
 export type ContactListItem = {
-  icon?: string
-  value: string
-  text?: string
-  type: 'link' | 'copy'
-}
+  icon?: string;
+  value: string;
+  text?: string;
+  type: 'link' | 'copy';
+};
 
 export type ContentBlock = {
   type: 'paragraph' | 'heading' | 'list' | 'project' | 'link' | 'image' | 'sub-group' | 'toggle' | 'contacts' | 'divider',
@@ -41,10 +41,10 @@ export type ContentBlock = {
   measure?: string,
   columns?: number,
   isShort?: boolean,
-}
+};
 
 export type ContentSection = {
-  title?: string
-  content: ContentBlock[] | string
-  link?: string
-}
+  title?: string;
+  content: ContentBlock[] | string;
+  link?: string;
+};

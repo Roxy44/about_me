@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { useLocale } from '../../utils'
-import { Globe } from 'lucide-react'
+import { useIsMobile, useLocale } from '../../utils';
+import { Globe } from 'lucide-react';
 import { HeaderBlocks } from './utils';
 
 const sectionLinks = Object.values(HeaderBlocks);
@@ -38,6 +38,8 @@ const Header = () => {
 	const [activeItem, setActiveItem] = useState<string>(sectionLinks[0].link);
   const headerRef = useRef<HTMLElement>(null);
   const navigationLockRef = useRef(false);
+
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const header = headerRef.current;
@@ -122,17 +124,6 @@ const Header = () => {
     };
   }, []);
 
-	const styles = {
-		language_buttons: (lang: string) => `
-			rounded px-3 py-2 ${locale === lang ? 'bg-white text-blue-500' : 'text-white'} cursor-pointer
-			hover:bg-white/30 hover:text-blue-500
-		`,
-		header_item: (isActive: boolean) => `
-			text-xl cursor-pointer 
-			${!isActive ? 'text-white hover:border-b-2 hover:border-white' : 'border-b-2 border-[#d4ecb9] text-[#d4ecb9]'}
-		` 
-	};
-
 	const handleClick = (link: string) => {
     navigationLockRef.current = true;
 		setActiveItem(link);
@@ -142,36 +133,73 @@ const Header = () => {
     window.history.replaceState(null, '', link);
 	};
 
-	const headerItems: React.ReactNode[] = Object.values(HeaderBlocks).map((item) => (
-		<div 
-			key={item.title}
-			className={styles.header_item(activeItem === item.link)}
-			onClick={() => handleClick(item.link)}
-		>{t(item.title)}</div>
-	));
+	const headerItems: React.ReactNode[] = Object.values(HeaderBlocks).map((item) => {
+    const isActive = activeItem === item.link;
+
+    return (
+      <button
+        key={item.title}
+        type="button"
+        onClick={() => handleClick(item.link)}
+        className={`
+          cursor-pointer whitespace-nowrap pb-0.5 text-sm leading-tight
+          md:text-base lg:text-lg xl:text-xl
+          ${isActive
+            ? `text-[#d4ecb9] ${isMobile ? '' : 'border-b-2 border-[#d4ecb9]'}`
+            : `text-white ${isMobile ? '' : 'hover:border-b-2 hover:border-white'}`}
+        `}
+      >
+        {isMobile ? <item.icon className="size-5" /> : t(item.title)}
+      </button>
+    );
+  });
 
   return (
-    <header ref={headerRef} className="sticky top-0 z-50 flex w-full items-center justify-between bg-[#3b97ed] p-[12px] px-80">
-      <div className="flex items-center gap-10">{headerItems}</div>
-      <div className="flex items-center gap-2 text-sm">
-        <Globe className="size-6 text-white" />
+    <header
+      ref={headerRef}
+      className={`
+        sticky top-0 z-50 flex w-full flex-wrap items-center justify-between
+        bg-[#3b97ed] py-2.5
+        ${isMobile ? 'px-4' : 'md:px-10 lg:px-16 xl:px-24 2xl:px-60'}
+      `}
+    >
+      <nav
+        aria-label="Main"
+        className={`
+          flex min-w-0 flex-1 flex-wrap items-center
+          ${isMobile ? 'gap-x-5 mt-1' : 'gap-x-3 md:gap-x-4 lg:gap-x-6 xl:gap-x-8 2xl:gap-x-10'}
+        `}
+      >
+        {headerItems}
+      </nav>
+
+      <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+        <Globe className="size-5 text-white sm:size-6" aria-hidden />
         <button
           type="button"
-          className={styles.language_buttons('ru')}
+          className={`
+            cursor-pointer rounded px-2 py-1 text-xs sm:px-3 sm:py-2 sm:text-sm
+            ${locale === 'ru' ? 'bg-white text-blue-500' : 'text-white'}
+            hover:bg-white/30 hover:text-blue-500
+          `}
           onClick={() => setLocale('ru')}
         >
           RU
         </button>
         <button
           type="button"
-          className={styles.language_buttons('en')}
+          className={`
+            cursor-pointer rounded px-2 py-1 text-xs sm:px-3 sm:py-2 sm:text-sm
+            ${locale === 'en' ? 'bg-white text-blue-500' : 'text-white'}
+            hover:bg-white/30 hover:text-blue-500
+          `}
           onClick={() => setLocale('en')}
         >
           EN
         </button>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

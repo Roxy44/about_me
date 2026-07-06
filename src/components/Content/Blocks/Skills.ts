@@ -1,4 +1,4 @@
-import type { ContentBlock } from '../types'
+import type { ContentBlock } from '../types';
 
 export const skillsContent = (locale: string = 'ru'): ContentBlock[] => [
   {
@@ -150,4 +150,4 @@ export const skillsContent = (locale: string = 'ru'): ContentBlock[] => [
       },
     ],
   },
-]
+];

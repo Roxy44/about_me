@@ -1,4 +1,4 @@
-import type { ContentBlock } from '../types'
+import type { ContentBlock } from '../types';
 
 export const additionalContent: (locale: string) => ContentBlock[] = (locale: string = 'ru') => [
 	{
@@ -27,4 +27,4 @@ export const additionalContent: (locale: string) => ContentBlock[] = (locale: st
 		type: 'paragraph',
 		text: locale === 'ru' ? 'Работал в проектных командах по методологиям Agile, Scrum.' : 'Worked in project teams according to the Agile, Scrum methodologies.',
 	}
-]
+];

@@ -1,4 +1,4 @@
-export type Locale = 'ru' | 'en'
+export type Locale = 'ru' | 'en';
 
 /** Russian source text -> English. Add new strings here as you build the page. */
 const EN: Record<string, string> = {
@@ -15,9 +15,9 @@ const EN: Record<string, string> = {
   'Развернуть': 'Expand',
   'Свернуть': 'Collapse',
   'Скопировано!': 'Copied!',
-}
+};
 
 export function translate(text: string, locale: Locale): string {
-  if (locale === 'ru') return text
-  return EN[text] ?? text
-}
+  if (locale === 'ru') return text;
+  return EN[text] ?? text;
+};

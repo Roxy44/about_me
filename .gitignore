@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local code review notes (not for GitHub)
+CODE_REVIEW.md

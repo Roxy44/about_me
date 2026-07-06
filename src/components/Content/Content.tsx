@@ -1,4 +1,4 @@
-import { useIsMobile, useIsTablet, useLocale } from '../../utils';
+import { useIsMobile, useLocale } from '../../utils';
 import { ContentRenderer } from './ContentRenderer';
 import { ContentBlocks } from './utils';
 
@@ -7,7 +7,6 @@ const Content = () => {
   const contentBlocks = ContentBlocks(locale);
 
   const isMobile = useIsMobile();
-  const isTablet = useIsTablet();
 
   const contentItems: React.ReactNode[] = Object.values(contentBlocks).map((item, index) => (
     <section

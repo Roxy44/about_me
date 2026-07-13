@@ -7,33 +7,33 @@ import { skillsContent } from './Blocks/Skills';
 import { contactsContent } from './Blocks/Contacts';
 
 export const ContentBlocks = (locale: string): Record<string, ContentSection> => ({
-	personal_info: {
-    link: 'about-me',
-		content: aboutMeContent(locale),
-  },
-  experience: {
-    title: 'Опыт работы',
-    content: experienceContent(locale),
-    link: 'experience',
-  },
-  education: {
-    title: 'Образование',
-    content: educationContent(locale),
-    link: 'education',
-  },
-  skills: {
-    title: 'Навыки',
-    content: skillsContent(locale),
-    link: 'skills',
-  },
-  additional: {
-    title: 'Дополнительно',
-    content: additionalContent(locale),
-    link: 'additional',
-  },
-  contacts: {
-    title: 'Контакты',
-    content: contactsContent(locale),
-    link: 'contacts',
-  },
+    personal_info: {
+        link: 'about-me',
+        content: aboutMeContent(locale),
+    },
+    experience: {
+        title: 'Опыт работы',
+        content: experienceContent(locale),
+        link: 'experience',
+    },
+    education: {
+        title: 'Образование',
+        content: educationContent(locale),
+        link: 'education',
+    },
+    skills: {
+        title: 'Навыки',
+        content: skillsContent(locale),
+        link: 'skills',
+    },
+    additional: {
+        title: 'Дополнительно',
+        content: additionalContent(locale),
+        link: 'additional',
+    },
+    contacts: {
+        title: 'Контакты',
+        content: contactsContent(locale),
+        link: 'contacts',
+    },
 });

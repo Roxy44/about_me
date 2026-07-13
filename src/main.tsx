@@ -5,9 +5,9 @@ import App from './App.tsx';
 import { LocaleProvider } from './utils';
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <LocaleProvider>
-      <App />
-    </LocaleProvider>
-  </StrictMode>,
+    <StrictMode>
+        <LocaleProvider>
+            <App />
+        </LocaleProvider>
+    </StrictMode>,
 );

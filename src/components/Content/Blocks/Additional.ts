@@ -22,9 +22,5 @@ export const additionalContent: (locale: string) => ContentBlock[] = (locale: st
 	{
 		type: 'paragraph',
 		text: locale === 'ru' ? 'Знаю принципы построения архитектуры веб-приложений и имею развитый кругозор в направлении веб-технологий.' : 'I know the principles of building the architecture of web applications and have a developed outlook in the direction of web technologies.',
-	},
-	{
-		type: 'paragraph',
-		text: locale === 'ru' ? 'Работал в проектных командах по методологиям Agile, Scrum.' : 'Worked in project teams according to the Agile, Scrum methodologies.',
 	}
 ];

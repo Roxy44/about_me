@@ -21,7 +21,7 @@ export const experienceContent = (locale: string = 'ru'): ContentBlock[] => {
 							type: 'heading',
 							text: 'RedCat',
 							caption: {
-								main: locale === 'ru' ? 'Апрель 2025 — Июль 2026' : 'April 2025 — July 2026',
+								main: locale === 'ru' ? 'Апрель 2025 — По настоящее время' : 'April 2025 — Present',
 							}
 						},
 						{
@@ -40,12 +40,29 @@ export const experienceContent = (locale: string = 'ru'): ContentBlock[] => {
 							type: 'list',
 							dotList: true,
 							items: [
-								locale === 'ru' ? 'разработка нового функционала для существующего приложения (создание новых элементов формы, страниц, разделов, виджетов)' : 'development of new functionality for an existing application (creation of new form elements, pages, sections, widgets)',
-								locale === 'ru' ? 'доработка имеющегося функционала приложения (рефакторинг и актуализация кода, работа с админкой)' : 'improvement of the existing application functionality (refactoring and updating of code, working with the administration)',
-								locale === 'ru' ? 'разработка эндпоинтов для Backend и тестирование в Postman' : 'development of endpoints for Backend and testing in Postman',
-								locale === 'ru' ? 'взаимодействие с командой дизайнеров, разработчиков Backend, Data science, аналитики и тестирования' : 'interaction with the design, Backend development, Data science, analytics, and testing teams',
-								locale === 'ru' ? 'проведение code review' : 'code review',
-								locale === 'ru' ? 'разработка и взаимодействие с ИИ-агентами' : 'development and interaction with AI agents',
+								locale === 'ru'
+									? 'разработка нового функционала для существующего приложения: элементы форм (3+), страницы (10+), разделы (2–3), виджеты (3)'
+									: 'development of new functionality for an existing application: form elements (3+), pages (10+), sections (2–3), widgets (3)',
+								locale === 'ru'
+									? 'доработка имеющегося функционала приложения (рефакторинг и актуализация кода, работа с админкой)'
+									: 'refinement of existing functionality (refactoring, code updates, admin panel)',
+								locale === 'ru'
+									? 'разработка API routes / BFF (Next.js) и проверка контрактов в Postman'
+									: 'development of API routes / BFF (Next.js) and contract checks in Postman',
+								locale === 'ru'
+									? 'взаимодействие с командой дизайнеров (1), разработчиков Backend (2), Data science (3+), аналитики и тестирования (3)'
+									: 'collaboration with Design (1), Backend (2), Data Science (3+), Analytics and QA (3)',
+								locale === 'ru'
+									? 'со временем стал core-разработчиком frontend-части основного продукта после перераспределения ресурсов команды: самостоятельно доводил фичи, багфиксы и доработки продукта'
+									: 'became the core frontend developer of the main product after team reallocation: independently delivered features, bug fixes, and product improvements',
+								locale === 'ru'
+									? 'взял на себя процесс выгрузки в продакшен и стабилизировал процесс релизов'
+									: 'took ownership of production deployments and stabilized the release process',
+								locale === 'ru' ? 'проведение code review' : 'code reviews',
+								locale === 'ru'
+									? 'интеграция ИИ-агентов во frontend продукта (UI и сценарии работы агентов в приложении)'
+									: 'integrated AI agents into the product frontend (UI and in-app agent workflows)',
+								locale === 'ru' ? 'ведение технической документации' : 'technical documentation',
 							],
 						},
 					]
@@ -78,10 +95,18 @@ export const experienceContent = (locale: string = 'ru'): ContentBlock[] => {
 							type: 'list',
 							dotList: true,
 							items: [
-								locale === 'ru' ? 'разработка нового функционала для существующего приложения (создание переиспользуемых форм)' : 'development of new functionality for an existing application (creation of reusable forms)',
-								locale === 'ru' ? 'разработка лендингов по макетам Figma (изменение/добавление функционала, создание новых страниц)' : 'development of landing pages by Figma templates (changing/adding functionality, creating new page forms)',
-								locale === 'ru' ? 'работа с серверной частью, написание GraphQL-запросов и разработка эндпоинтов' : 'work with the server side, writing GraphQL queries and developing endpoints',
-								locale === 'ru' ? 'написание и доработка своей библиотеки' : 'writing and improving my own library',
+								locale === 'ru'
+									? 'разработка нового функционала для существующего приложения (создание переиспользуемых форм и компонентов форм)'
+									: 'development of new functionality for an existing application (creation of reusable forms and form components)',
+								locale === 'ru'
+									? 'разработка лендингов по макетам Figma (изменение/добавление функционала, создание новых страниц)'
+									: 'development of landing pages based on Figma layouts (modification/addition of functionality, creation of new pages)',
+								locale === 'ru'
+									? 'работа с серверной частью: GraphQL-запросы и работа с API'
+									: 'work with the server side: GraphQL queries and API integration',
+								locale === 'ru'
+									? 'написание и доработка внутренней библиотеки (виджета)'
+									: 'development and maintenance of an internal library (widget)',
 							],
 						},
 					]
@@ -114,7 +139,7 @@ export const experienceContent = (locale: string = 'ru'): ContentBlock[] => {
 							type: 'list',
 							dotList: true,
 							items: [
-								locale === 'ru' ? 'самостоятельное UI/UX-проектирование и оптимизация пользовательских интерфейсов (в роли единственного Frontend-разработчика)' : 'self-designed and optimized UI/UX interfaces (as the only Frontend developer)',
+								locale === 'ru' ? 'самостоятельное UI/UX-проектирование и оптимизация пользовательских интерфейсов (в роли единственного Frontend-разработчика)' : 'independent UI/UX design and optimization of user interfaces (as the only Frontend developer)',
 								locale === 'ru' ? 'интеграция Frontend с Backend, взаимодействие с тестировщиками, аналитиками, дизайнерами' : 'integration of Frontend with Backend, interaction with testers, analysts, designers',
 								locale === 'ru' ? 'поддержка старого кода и переход на новый стек' : 'support of the old code and transition to the new stack',
 							],
@@ -143,7 +168,7 @@ export const experienceContent = (locale: string = 'ru'): ContentBlock[] => {
 							text: locale === 'ru' ? 
 								'Проектная работа. Оптимизация работы и улучшение производительности банковских приложений, добавление нового функционала. Разработка программного обеспечения для анализа кредитных организаций.'
 								:
-								'Project work. Optimization of the work and improvement of the performance of banking applications, adding new functionality. Development of software for the analysis of credit organizations.'
+								'Project work. Optimizing the work and improving the performance of banking applications, adding new functionality. Development of software for the analysis of credit institutions.'
 						},
 					]
 				}

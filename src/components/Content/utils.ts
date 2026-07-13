@@ -33,7 +33,7 @@ export const ContentBlocks = (locale: string): Record<string, ContentSection> =>
   },
   contacts: {
     title: 'Контакты',
-    content: contactsContent(),
+    content: contactsContent(locale),
     link: 'contacts',
   },
 });

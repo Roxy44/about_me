@@ -3,7 +3,14 @@ import { publicAsset } from '../../../utils';
 
 const icon = (filename: string) => publicAsset(`icons/${filename}`);
 
-export const contactsContent = (): ContentBlock[] => [
+export const contactsContent = (locale: string = 'ru'): ContentBlock[] => [
+  {
+    type: 'paragraph',
+    text:
+      locale === 'ru'
+        ? 'Республика Армения, Ереван · UTC+4 · Remote'
+        : 'Republic of Armenia, Yerevan · UTC+4 · Remote',
+  },
   {
     type: 'contacts',
     items: [

@@ -127,6 +127,8 @@ constitution governs behavior; this file governs form, lint intents, and style t
     | No unused variables / parameters          | `no-unused-vars`                                | **warn**  |
     | No leftover `console` calls               | `no-console`                                    | **warn**  |
     | Prefer `const` when never reassigned      | `prefer-const`                                  | **error** |
+    | No magic numbers (prefer named constants) | `no-magic-numbers`                              | **warn**  |
+    | No empty blocks / empty `catch`           | `no-empty`                                      | **error** |
     | No duplicate imports from the same module | `no-duplicate-imports` / `import/no-duplicates` | **error** |
     | Blank line after the import block         | `import/newline-after-import`                   | **warn**  |
     | No circular import dependencies           | `import/no-cycle`                               | **error** |
@@ -160,6 +162,15 @@ with React / import plugins as needed:
         "prefer-const": "error",
         "indent": ["error", 4],
         "semi": ["warn", "always"],
+        "no-magic-numbers": [
+            "warn",
+            {
+                "ignore": [-1, 0, 1, 2],
+                "ignoreArrayIndexes": true,
+                "ignoreDefaultValues": true
+            }
+        ],
+        "no-empty": ["error", { "allowEmptyCatch": false }],
         "import/no-duplicates": "error",
         "import/newline-after-import": "warn",
         "import/no-cycle": "error",

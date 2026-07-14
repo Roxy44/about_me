@@ -1,18 +1,27 @@
 {
-    "$schema": "./node_modules/oxlint/configuration_schema.json",
-    "plugins": ["react", "typescript", "oxc", "import"],
-    "rules": {
-        "eqeqeq": "error",
-        "no-unused-vars": "warn",
-        "no-console": "warn",
-        "prefer-const": "error",
-        "import/no-duplicates": "error",
-        "import/newline-after-import": "warn",
-        "import/no-cycle": "error",
-        "react/rules-of-hooks": "error",
-        "react/exhaustive-deps": "warn",
-        "react/jsx-key": "error",
-        "react/self-closing-comp": "warn",
-        "react/only-export-components": ["warn", { "allowConstantExport": true }]
-    }
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc", "import"],
+  "rules": {
+    "eqeqeq": "error",
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "prefer-const": "error",
+    "no-magic-numbers": [
+      "warn",
+      {
+        "ignore": [-1, 0, 1, 2],
+        "ignoreArrayIndexes": true,
+        "ignoreDefaultValues": true
+      }
+    ],
+    "no-empty": ["error", { "allowEmptyCatch": false }],
+    "import/no-duplicates": "error",
+    "import/newline-after-import": "warn",
+    "import/no-cycle": "error",
+    "react/rules-of-hooks": "error",
+    "react/exhaustive-deps": "warn",
+    "react/jsx-key": "error",
+    "react/self-closing-comp": "warn",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
 }

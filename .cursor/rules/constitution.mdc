@@ -119,5 +119,20 @@ editor/toolchain wiring is required.
   file's intents need packages, configs, or extensions that are missing, report them and
   ask (via **W-6**) before adding. When tooling is approved, wire editor + scripts so the
   developer is not left hunting for setup. A formatter is optional until the user wants it.
-- **C-4 — Verify style with the same tools.** Prefer the project's existing scripts (`lint`,
-  and `format` / `format:check` only if present) over ad-hoc reformatting of unrelated trees.
+## 7. Avoid / Code quality (agent + review)
+
+Behavioral prohibitions that are easy to miss. Where a linter can enforce the same
+intent, `code-style.mdc` carries the rule id; this section covers what tools usually
+cannot.
+
+- **A-1 — No hardcoding of config / API surface.** Do not hardcode environment-specific
+  values (API base URLs, hosts, tokens-as-strings, feature switches that belong in env or
+  config) as the lasting solution. A temporary hardcode to unblock work MAY be used, but
+  you MUST call it out as a **warn / follow-up** in the task report and prefer extracting
+  it to env, constants, or config before calling the change "done" for real.
+- **A-2 — Prefer named constants over magic numbers.** Meaningful numeric literals SHOULD
+  be named constants. Enforced where possible via linter intent `no-magic-numbers`
+  (see `code-style.mdc`).
+- **A-3 — No empty `try/catch` (or empty blocks).** Do not swallow errors with empty
+  `catch` / empty control blocks. Handle, rethrow, or document with a comment if
+  intentional. Enforced via linter intent `no-empty` (see `code-style.mdc`).

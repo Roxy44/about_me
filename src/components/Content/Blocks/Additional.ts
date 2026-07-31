@@ -7,30 +7,23 @@ export const additionalContent: (locale: string) => ContentBlock[] = (locale: st
     },
     {
         type: 'project',
-        title: locale === 'ru' ? 'Разработка мини-приложений на JS / TS' : 'Development of mini-applications in JS / TS',
+        title: locale === 'ru' ? 'Разработка мини-приложений на JS / TS' : 'JS / TS Mini-Apps',
         href: 'https://roxy44.github.io/Mini-Apps/',
         description:
             locale === 'ru'
-                ? 'Использовал потенциал различных функций данного языка программирования (JavaScript).'
-                : 'I used the potential of various functions of this programming language (JavaScript).',
+                ? 'В проекте использовал широкий набор возможностей JavaScript.'
+                : 'A collection of web apps demonstrating advanced JavaScript/TypeScript patterns.',
     },
     {
         type: 'project',
         title:
             locale === 'ru'
                 ? 'Разработка приложения администрирования работы вендинговых аппаратов'
-                : 'Development of an application for the administration of vending machines',
+                : 'Vending Machine Management App',
         href: 'https://roxy44.github.io/VendingMachine',
         description:
             locale === 'ru'
-                ? 'В рамках данного проекта была поднята база данных, которая содержала информацию для мониторинга и изменений (оплата, выдача товара и т.д.).'
-                : 'As part of this project, a remote database was raised, which contained information for monitoring and changes (payment, delivery of goods, etc.).',
-    },
-    {
-        type: 'paragraph',
-        text:
-            locale === 'ru'
-                ? 'Знаю принципы построения архитектуры веб-приложений и имею развитый кругозор в направлении веб-технологий.'
-                : 'I know the principles of building the architecture of web applications and have a developed outlook in the direction of web technologies.',
+                ? 'В рамках проекта спроектировал и развернул базу данных, используя сервис Firebase для real-time мониторинга состояний системы (оплата, выдача товара и т.д.).'
+                : 'Designed and deployed a real-time system with Firebase backend for tracking payments and item distribution.',
     },
 ];

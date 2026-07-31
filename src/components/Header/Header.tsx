@@ -101,7 +101,6 @@ const Header = () => {
         window.addEventListener('touchmove', unlockNavigationLock, { passive: true });
         document.addEventListener('pointerdown', onPointerDown);
         window.addEventListener('keydown', onKeyDown);
-        document.addEventListener('pointerdown', onPointerDown);
 
         return () => {
             window.removeEventListener('scroll', onScroll);
@@ -130,6 +129,8 @@ const Header = () => {
                 key={item.title}
                 type='button'
                 onClick={() => handleClick(item.link)}
+                aria-label={t(item.title)}
+                aria-current={isActive ? 'true' : undefined}
                 className={`
           cursor-pointer whitespace-nowrap pb-0.5 text-sm leading-tight
           md:text-base lg:text-lg xl:text-xl
@@ -140,7 +141,7 @@ const Header = () => {
           }
         `}
             >
-                {isMobile ? <item.icon className='size-5' /> : t(item.title)}
+                {isMobile ? <item.icon className='size-5' aria-hidden /> : t(item.title)}
             </button>
         );
     });
@@ -173,6 +174,8 @@ const Header = () => {
             ${locale === 'ru' ? 'bg-white text-blue-500' : 'text-white'}
             hover:bg-white/30 hover:text-blue-500
           `}
+                    aria-pressed={locale === 'ru'}
+                    aria-label={t('Русский')}
                     onClick={() => setLocale('ru')}
                 >
                     RU
@@ -184,6 +187,8 @@ const Header = () => {
             ${locale === 'en' ? 'bg-white text-blue-500' : 'text-white'}
             hover:bg-white/30 hover:text-blue-500
           `}
+                    aria-pressed={locale === 'en'}
+                    aria-label={t('Английский')}
                     onClick={() => setLocale('en')}
                 >
                     EN

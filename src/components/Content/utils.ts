@@ -6,14 +6,14 @@ import { educationContent } from './Blocks/Education';
 import { skillsContent } from './Blocks/Skills';
 import { contactsContent } from './Blocks/Contacts';
 
-export const ContentBlocks = (locale: string): Record<string, ContentSection> => ({
+export const ContentBlocks = (locale: string, isMobile = false): Record<string, ContentSection> => ({
     personal_info: {
         link: 'about-me',
-        content: aboutMeContent(locale),
+        content: aboutMeContent(locale, isMobile),
     },
     experience: {
         title: 'Опыт работы',
-        content: experienceContent(locale),
+        content: experienceContent(locale, isMobile),
         link: 'experience',
     },
     education: {
@@ -33,7 +33,7 @@ export const ContentBlocks = (locale: string): Record<string, ContentSection> =>
     },
     contacts: {
         title: 'Контакты',
-        content: contactsContent(locale),
+        content: contactsContent(locale, isMobile),
         link: 'contacts',
     },
 });

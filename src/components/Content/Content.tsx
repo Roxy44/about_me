@@ -4,9 +4,8 @@ import { ContentBlocks } from './utils';
 
 const Content = () => {
     const { locale, t } = useLocale();
-    const contentBlocks = ContentBlocks(locale);
-
     const isMobile = useIsMobile();
+    const contentBlocks = ContentBlocks(locale, isMobile);
 
     const contentItems: React.ReactNode[] = Object.values(contentBlocks).map((item, index) => (
         <section key={item.link ?? item.title ?? index} id={item.link} className='text-black text-xl'>

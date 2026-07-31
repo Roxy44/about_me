@@ -1,7 +1,8 @@
 import { useState, type ReactNode } from 'react';
-import { useIsMobile, useLocale } from '../../utils';
-import type { ContactListItem, ContentBlock } from './types';
 import { CircleCheck } from 'lucide-react';
+
+import { SoftImage, useIsMobile, useLocale } from '../../utils';
+import type { ContactListItem, ContentBlock } from './types';
 
 const linkClassName = 'text-[#3b97ed] underline underline-offset-2 hover:text-[#2563eb]';
 
@@ -40,7 +41,14 @@ function renderSkillItem(item: SkillItem, itemIndex: number, isMobile: boolean, 
             key={itemIndex}
             className={`flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-100 px-3 py-2 ${isMobile ? 'w-full' : 'w-[220px]'}`}
         >
-            {item.icon && <img src={item.icon} alt={item.text} className='size-6 shrink-0 object-contain' />}
+            {item.icon && (
+                <SoftImage
+                    src={item.icon}
+                    alt={item.text ?? ''}
+                    wrapperClassName='size-6'
+                    className='size-6 object-contain'
+                />
+            )}
             <span className={`min-w-0 flex-1 ${isMobile ? 'text-[16px]' : ''}`}>{item.text}</span>
             {measure && item.measureValue !== undefined && (
                 <span className='shrink-0 text-sm font-semibold text-[#3b97ed]'>{item.measureValue + ' ' + measure}</span>
@@ -144,7 +152,12 @@ function renderBlock(
                         {block.title}
                     </a>
                     {block.image && (
-                        <img src={block.image} alt={block.title} className='max-w-md rounded-lg border border-gray-200' />
+                        <SoftImage
+                            src={block.image}
+                            alt={block.title ?? ''}
+                            wrapperClassName='max-w-md w-full rounded-lg border border-gray-200'
+                            className='h-auto w-full'
+                        />
                     )}
                     <p className={`leading-relaxed text-gray-700 ${isMobile ? 'text-sm' : ''}`}>{block.description}</p>
                 </div>
@@ -169,7 +182,12 @@ function renderBlock(
                             className={`shrink-0 overflow-hidden rounded-full ${block.className ?? ''}`}
                             style={{ width: size, height: size }}
                         >
-                            <img src={block.src} alt={block.alt ?? ''} className='object-cover' />
+                            <SoftImage
+                                src={block.src}
+                                alt={block.alt ?? ''}
+                                wrapperClassName='size-full'
+                                className='size-full object-cover'
+                            />
                         </div>
                         {block.caption && (
                             <div className='flex flex-col items-center'>
@@ -182,11 +200,12 @@ function renderBlock(
             }
 
             return (
-                <img
+                <SoftImage
                     key={index}
                     src={block.src}
                     alt={block.alt ?? ''}
-                    className={block.className ?? 'max-w-md rounded-lg border border-gray-200'}
+                    wrapperClassName={block.className ?? 'max-w-md rounded-lg border border-gray-200'}
+                    className='h-auto w-full'
                 />
             );
 
@@ -269,7 +288,12 @@ function ContactsBlock({ block, t }: { block: ContentBlock; t: (text: string) =>
                                 title={item.text}
                                 className='rounded-md p-1 transition-colors hover:bg-white'
                             >
-                                <img src={item.icon} alt={item.text ?? ''} className='size-8' />
+                                <SoftImage
+                                    src={item.icon}
+                                    alt={item.text ?? ''}
+                                    wrapperClassName='size-8'
+                                    className='size-8 object-contain'
+                                />
                             </a>
                         );
                     }
@@ -282,7 +306,12 @@ function ContactsBlock({ block, t }: { block: ContentBlock; t: (text: string) =>
                             onClick={() => handleCopy(item.value)}
                             className={`cursor-pointer rounded-md p-1 transition-colors hover:bg-white`}
                         >
-                            <img src={item.icon} alt={item.text ?? ''} className='size-8' />
+                            <SoftImage
+                                src={item.icon}
+                                alt={item.text ?? ''}
+                                wrapperClassName='size-8'
+                                className='size-8 object-contain'
+                            />
                         </button>
                     );
                 })}
@@ -318,12 +347,14 @@ function ExpandList({
             {(list ?? [])
                 .slice(0, isShort ? 1 : undefined)
                 .map((child, childIndex) => renderBlock(child, childIndex, t, isMobile, filterValue))}
-            <div
-                className={`w-fit underline hover:text-[#3b97ed] active:text-[#2563eb] cursor-pointer ${isMobile ? 'text-[16px]' : ''}`}
+            <button
+                type='button'
+                className={`w-fit underline hover:text-[#3b97ed] active:text-[#2563eb] cursor-pointer bg-transparent p-0 border-0 text-inherit font-inherit ${isMobile ? 'text-[16px]' : ''}`}
                 onClick={() => setIsShort((prev) => !prev)}
+                aria-expanded={!isShort}
             >
                 {isShort ? t('Развернуть') : t('Свернуть')}
-            </div>
+            </button>
         </>
     );
 }

@@ -1,72 +1,64 @@
 import type { ContentBlock } from '../types';
-import { publicAsset, useIsMobile } from '../../../utils';
+import { publicAsset } from '../../../utils';
 
-export const aboutMeContent = (locale: string = 'ru'): ContentBlock[] => {
-    const isMobile = useIsMobile();
-
-    return [
-        {
-            type: 'sub-group',
-            direction: isMobile ? 'column' : 'row',
-            className: `flex ${isMobile ? 'items-center gap-4' : 'items-start gap-12'}`,
-            content: [
-                {
-                    type: 'image',
-                    src: publicAsset('img/photo.jpg'),
-                    alt: locale === 'ru' ? 'Фото профиля' : 'Profile photo',
-                    variant: 'circle',
-                    size: isMobile ? 200 : 300,
-                    className: 'flex justify-center items-center',
-                    caption: {
-                        main: 'Дмитрий Иванков',
-                        sub: 'Middle Frontend Developer',
+export const aboutMeContent = (locale: string = 'ru', isMobile = false): ContentBlock[] => [
+    {
+        type: 'sub-group',
+        direction: isMobile ? 'column' : 'row',
+        className: `flex ${isMobile ? 'items-center gap-4' : 'items-start gap-12'}`,
+        content: [
+            {
+                type: 'image',
+                src: publicAsset('img/photo-avatar.jpg'),
+                alt: locale === 'ru' ? 'Фото профиля' : 'Profile photo',
+                variant: 'circle',
+                size: isMobile ? 200 : 300,
+                className: 'flex justify-center items-center',
+                caption: {
+                    main: 'Дмитрий Иванков',
+                    sub: 'Middle Frontend Developer',
+                },
+            },
+            {
+                type: 'sub-group',
+                title: 'Обо мне',
+                direction: 'column',
+                className: 'text-base gap-4',
+                content: [
+                    {
+                        type: 'paragraph',
+                        text:
+                            locale === 'ru'
+                                ? 'Frontend-разработчик с профильным высшим образованием и 4 годами опыта коммерческой разработки.'
+                                : 'Frontend Developer with a degree in Computer Science and 4 years of commercial web development experience.',
                     },
-                },
-                {
-                    type: 'sub-group',
-                    title: 'Обо мне',
-                    direction: 'column',
-                    className: 'text-base gap-4',
-                    content: [
-                        {
-                            type: 'paragraph',
-                            text:
-                                locale === 'ru'
-                                    ? 'Имею профильное высшее образование и опыт работы Frontend-разработчиком 4 года. Обладаю высокой экспертизой в React, а также опытом применения смежного стека технологий.'
-                                    : 'I have a specialized higher education and 4 years of experience as a Frontend developer. I have a high level of expertise in React, as well as experience in using related technology stacks.',
-                        },
-                        {
-                            type: 'paragraph',
-                            text:
-                                locale === 'ru'
-                                    ? 'Мой опыт коммерческой разработки при взаимодействии с Backend составляет 3 года, где преимущественно использовались Django + Python / Node / Firebase. Работал в проектных командах по методологиям Agile, Scrum.'
-                                    : 'I have 3 years of experience in commercial development, working with Backend, where I primarily used Django + Python / Node / Firebase. I have worked in project teams using Agile and Scrum methodologies.',
-                        },
-
-                        {
-                            type: 'heading',
-                            text:
-                                locale === 'ru'
-                                    ? 'Своими основными профессиональными компетенциями считаю:'
-                                    : 'I consider my main professional competencies to be:',
-                        },
-                        {
-                            type: 'list',
-                            items: [
-                                locale === 'ru'
-                                    ? 'создание качественных и понятных UI/UX пользовательских интерфейсов'
-                                    : 'creating high-quality and intuitive UI/UX user interfaces',
-                                locale === 'ru'
-                                    ? 'сбор и управление обратной связью от проектной команды и пользователей с целью внесения необходимых доработок, улучшений'
-                                    : 'collecting and managing feedback from the project team and users in order to make necessary improvements',
-                                locale === 'ru'
-                                    ? 'полный цикл управления Frontend-разработкой в единственном лице (Микран) — умение работать по целям, а не только реализовывать пул конкретных задач'
-                                    : 'full-cycle Frontend development management as a single person (Mikran) — the ability to work on goals, and not just implement a pool of specific tasks',
-                            ],
-                        },
-                    ],
-                },
-            ],
-        },
-    ];
-};
+                    {
+                        type: 'paragraph',
+                        text:
+                            locale === 'ru'
+                                ? 'Специализируюсь на создании сложных SPA/SSR-приложений на React, Next.js и TypeScript. Имею опыт проектирования архитектуры с нуля, оптимизации производительности (PageSpeed / Core Web Vitals) и внедрения AI-инструментов во Frontend-разработку. Работал в кросс-функциональных командах по Agile/Scrum.'
+                                : 'Specialized in building complex SPA/SSR applications with React, Next.js, and TypeScript. Experienced in architectural design from scratch, web performance optimization (PageSpeed / Core Web Vitals), and integrating AI tools into Frontend development workflows. Proven track record in Agile/Scrum cross-functional environments.',
+                    },
+                    {
+                        type: 'heading',
+                        text: locale === 'ru' ? 'Ключевые компетенции:' : 'Core Competencies:',
+                    },
+                    {
+                        type: 'list',
+                        items: [
+                            locale === 'ru'
+                                ? 'Создание продуманных UI/UX интерфейсов и продуктовая работа по целям'
+                                : 'Designing intuitive UI/UX interfaces aligned with product goals',
+                            locale === 'ru'
+                                ? 'Полный цикл управления Frontend-разработкой — в том числе как единственный Frontend разработчик на проекте'
+                                : 'Full-cycle Frontend development management — including as the sole Frontend developer on a project',
+                            locale === 'ru'
+                                ? 'Сбор обратной связи от команды и пользователей с последующей итеративной доработкой продукта'
+                                : 'Iterative product development driven by team and user feedback',
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+];

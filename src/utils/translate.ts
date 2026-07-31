@@ -11,7 +11,7 @@ const EN: Record<string, string> = {
     Образование: 'Education',
     Дополнительно: 'Additional Information',
     Контакты: 'Contacts',
-    'Дмитрий Иванков': 'Dmitriy Ivankov',
+    'Дмитрий Иванков': 'Dmitry Ivankov',
     Развернуть: 'Expand',
     Свернуть: 'Collapse',
     'Скопировано!': 'Copied!',

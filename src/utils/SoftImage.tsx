@@ -1,4 +1,4 @@
-import { useEffect, useState, type ImgHTMLAttributes } from 'react';
+import { useLayoutEffect, useRef, useState, type ImgHTMLAttributes } from 'react';
 
 type SoftImageProps = {
     src?: string;
@@ -11,12 +11,30 @@ type SoftImageProps = {
 
 type LoadStatus = 'loading' | 'loaded' | 'error';
 
+function isImageReady(img: HTMLImageElement): boolean {
+    return img.complete && img.naturalWidth > 0;
+}
+
 /** Image with reserved space and a pulse skeleton while loading. */
 export function SoftImage({ src, alt, wrapperClassName = '', className = '', ...imgProps }: SoftImageProps) {
     const [status, setStatus] = useState<LoadStatus>('loading');
+    const imgRef = useRef<HTMLImageElement>(null);
 
-    useEffect(() => {
+    // Cached images often skip onLoad — sync status from the DOM bitmap.
+    useLayoutEffect(() => {
         setStatus('loading');
+
+        const img = imgRef.current;
+        if (!img) return;
+
+        if (isImageReady(img)) {
+            setStatus('loaded');
+            return;
+        }
+
+        if (img.complete && img.naturalWidth === 0) {
+            setStatus('error');
+        }
     }, [src]);
 
     if (!src) {
@@ -27,6 +45,7 @@ export function SoftImage({ src, alt, wrapperClassName = '', className = '', ...
         <span className={`relative inline-block shrink-0 ${wrapperClassName}`}>
             <img
                 {...imgProps}
+                ref={imgRef}
                 src={src}
                 alt={alt}
                 decoding='async'
@@ -34,8 +53,11 @@ export function SoftImage({ src, alt, wrapperClassName = '', className = '', ...
                 onError={() => setStatus('error')}
                 className={`block ${className}`}
             />
-            {status !== 'loaded' && (
+            {status === 'loading' && (
                 <span className='pointer-events-none absolute inset-0 animate-pulse bg-gray-200' aria-hidden />
+            )}
+            {status === 'error' && (
+                <span className='pointer-events-none absolute inset-0 bg-gray-200' aria-hidden />
             )}
         </span>
     );

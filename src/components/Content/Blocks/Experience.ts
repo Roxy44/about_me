@@ -16,7 +16,7 @@ export const experienceContent = (locale: string = 'ru', isMobile = false): Cont
                         type: 'heading',
                         text: 'RedCat',
                         caption: {
-                            main: locale === 'ru' ? 'Апрель 2025 — По настоящее время' : 'April 2025 — Present',
+                            main: locale === 'ru' ? 'Апрель 2025 — Август 2026' : 'April 2025 — August 2026',
                         },
                     },
                     {
